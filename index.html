@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canadian Tire - Ultimate Marketing Case Competition Mockup</title>
+    <style>
+        /* Basic Reset */
+        
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-details {
+            display: flex;
+            /* This makes the image and sidebar sit side-by-side */
+            margin-top: 20px;
+        }
+
+        .product-image {
+            width: 50%;
+            /* Adjust as needed */
+            max-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-info {
+            width: 50%;
+            /* Adjust as needed */
+            padding-left: 20px;
+            /* Add some spacing between image and text */
+        }
+
+        .product-title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: #d32f2f;
+            margin-top: 10px;
+        }
+
+        .product-description {
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        .add-to-cart {
+            background-color: #0071e3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .shipping-info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .pricing-container {
+            width: 94%;
+            padding: 20px;
+            background-color: #fff;
+            border: none;
+            border-radius: 0;
+            /* Removes rounded corners */
+            box-shadow: none;
+            /* Removes the shadow */
+        }
+
+        .price {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+
+        .buy-online {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .availability-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .availability-option {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            width: 30%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .availability-option.available {
+            border: 2px solid black;
+        }
+
+        .availability-option img {
+            width: 30px;
+            height: auto;
+            display: block;
+            margin: 0 auto 5px;
+        }
+
+        .availability-option p {
+            font-size: 0.9em;
+        }
+
+        .availability-option.unavailable {
+            color: #999;
+            background-color: #eee;
+        }
+
+        .availability-option.unavailable img {
+            opacity: 0.5;
+        }
+
+        .location-info {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .location-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .quantity-selector button {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .quantity-selector input {
+            width: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin: 0 5px;
+        }
+
+        .add-to-cart-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .add-to-cart-button {
+            background-color: #7164d3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .heart-button {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.2em;
+        }
+
+        /* Basic Reset */
+
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Top Bar */
+
+        .top-bar {
+            background-color: #7164d3;
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Main Header */
+
+        .main-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .location {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .search-bar button {
+            background-color: #eee;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icons a {
+            margin-left: 15px;
+            color: #555;
+            text-decoration: none;
+        }
+
+        /* Category Navigation */
+
+        .category-nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .category-nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            /* Approximate color */
+        }
+
+        /* Chatbot Styles (Modified) */
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            /* Rounded corners for the container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            /* Initially hidden */
+            flex-direction: column;
+            height: 400px;
+            z-index: 1000;
+        }
+
+        .chatbot-container.active {
+            display: flex;
+            /* Show when active class is added */
+        }
+
+        .chatbot-header {
+            background-color: #7164d3;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            border-radius: 15px 15px 0 0;
+            /* Rounded corners for the header */
+        }
+
+        .chatbot-header h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .chatbot-close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .chat-display {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: scroll;
+        }
+
+        .message {
+            padding: 8px;
+            border-radius: 10px;
+            /* Rounded corners for messages */
+            margin-bottom: 5px;
+        }
+
+        .user-message {
+            background-color: #DCF8C6;
+            text-align: right;
+        }
+
+        .bot-message {
+            background-color: #eee;
+            text-align: left;
+        }
+
+        .chat-input {
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            display: flex;
+        }
+
+        .chat-input input[type="text"] {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        .chat-input button {
+            background-color: #7164d3;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Open Chatbot Button/Icon (Modified) */
+
+        .open-chatbot-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #7164d3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            z-index: 1000;
+            /* Ensure it's on top */
+        }
+
+        /* Slider Styles */
+        .balloon-slider-container {
+            margin-top: 10px;
+        }
+
+        .balloon-slider {
+            width: 100%;
+            /* Make the slider fill its container */
+            -webkit-appearance: none;
+            /* Override default look */
+            height: 10px;
+            /* Adjust height as needed */
+            background: #d3d3d3;
+            /* Default track color */
+            outline: none;
+            /* Remove outline */
+            opacity: 0.7;
+            /* Transparency */
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            /* Smooth transition */
+            border-radius: 5px;
+            /* Rounded track */
+        }
+
+        .balloon-slider:hover {
+            opacity: 1;
+            /* Fully visible on hover */
+        }
+
+        .balloon-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            /* Set a specific width */
+            height: 20px;
+            /* Set a specific height */
+            background: #7164d3;
+            /* Party City Purple */
+            cursor: pointer;
+            border-radius: 50%;
+            /* Make it a circle */
+        }
+
+        .balloon-slider::-moz-range-thumb {
+            width: 20px;
+            /* Set a specific width */
+            height: 20px;
+            /* Set a specific height */
+            background: #7164d3;
+            /* Party City Purple */
+            cursor: pointer;
+            border-radius: 50%;
+            /* Make it a circle */
+            border: none;
+            /* Remove border in Firefox */
+        }
+
+        /* Styling the Track */
+        .balloon-slider::-webkit-slider-runnable-track {
+            background: #d3d3d3;
+            /* Grey Track Colour */
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        .balloon-slider::-moz-range-track {
+            background: #d3d3d3;
+            /* Grey Track Colour */
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        .balloon-price-display {
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        .balloon-slider-blurb {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 5px;
+            /* Spacing between blurb and slider */
+        }
+
+        /* School Colour Styles*/
+        .color-selection {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            /* Stack the label and the select */
+            align-items: flex-start;
+            /* Align items to the start of the container */
+        }
+
+        .color-selection label {
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            /* Smaller font size for the label */
+            color: #555;
+            /* Dark grey color for the label */
+        }
+
+        .color-selection select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            /* Standard font size for the select */
+            cursor: pointer;
+        }
+
+        /* Style for the banner */
+        .balloons-online-banner {
+            background-color: #ffc107;
+            /* Example background color */
+            color: #000;
+            /* Text color */
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <div class="top-bar">
+        Get your order today. * Same day pick up or delivery available. <a href="#">Learn More</a>
+    </div>
+
+    <div class="main-header">
+        <div class="logo">
+            <img id="logo" src="./pictures/PartyCityLogo.png"
+                    alt="Party City Logo" />
+            <!-- Adds the Party City Logo-->
+        </div>
+
+        <div class="location">
+            Toronto, ON Party City<br>
+            Closed - Opens at 10:00 a.m.
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+
+        <div class="header-icons">
+            <a href="#">Support</a>
+            <a href="#">Email Sign Up</a>
+            <a href="#">Order Status</a>
+            <a href="#">Sign In</a>
+            <a href="#">FR</a>
+            <a href="#">♡</a>
+            <a href="#">🛒</a>
+        </div>
+    </div>
+
+    <div class="category-nav">
+        <a href="#">Balloons & Accessories</a>
+        <a href="#">Party Supplies</a>
+        <a href="#">Toys</a>
+        <a href="#">Birthday Party Supplies</a>
+        <a href="#">Special Occasions</a>
+        <a href="#">Holiday Celebrations</a>
+        <a href="#">Kids' Birthday</a>
+        <a href="#">St. Patrick's Day</a>
+        <a href="#">Flyer</a>
+        <a href="#">Clearance</a>
+    </div>
+
+    <!-- Add the banner here -->
+    <div class="balloons-online-banner">
+        ORDER YOUR BALLOONS ONLINE TODAY!
+    </div>
+
+    <div class="container">
+        <div class="product-title">Class Dismissed Supershape Inflatable Foil Balloon</div>
+        <div class="product-description">
+            Celebrate your graduate with sophistication and style with this Class Dismissed Supershape Balloon. 
+            This balloon features a "Grad" message on top of a solid black background adorned with a gold outlined graduation cap.
+            Pair with school colours to coordinate a beautiful bouquet. #855-1529-4
+        </div>
+        <!--
+        <div class="header">Party City - Product Page Clone</div>
+        -->
+        <div class="product-details">
+            <div class="product-image">
+                <img id="product-image" src="./pictures/gradballoon.jpg"
+                    alt="Class Dismissed Supershape Inflatable Foil Balloon" />
+            </div>
+            <div class="product-info">
+                <p class="balloon-slider-blurb">Check out some prearranged bouquets! As the price increases, the
+                    balloon set becomes more inclusive.</p>
+                <!--
+                <div class="product-title">"Congrats" Cursive Letters Satin Foil Balloon - Rose Gold, 56x28 in</div>
+                -->
+                <div class="product-price">$13.99</div>
+                <!-- Slider Section Start -->
+                <div class="balloon-slider-container">
+                    <input type="range" min="1" max="10" value="1" class="balloon-slider" id="balloon-slider">
+                    <div class="balloon-price-display">
+                        Price: <span id="balloon-price">$11.93</span> | Balloons: <span id="balloon-count">1</span>
+                    </div>
+                </div>
+                <!-- Slider Section End -->
+
+                <!-- School Color Section -->
+                <div class="color-selection">
+                    <label for="school-colors">Select Your School's Colors:</label>
+                    <select id="school-colors" name="school-colors">
+                        <option value="Select">Please select</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="purple">Purple</option>
+                        <!-- Add more color combinations as needed -->
+                    </select>
+                </div>
+
+                <div class="shipping-info">
+                    <p>Free Shipping on orders over $49</p>
+                    <p>Usually ships within 1-2 business days</p>
+                </div>
+                <div class="pricing-container">
+                    <div class="buy-online">Buy Online:</div>
+
+                    <div class="availability-options">
+                        <div class="availability-option available">
+                            <img src="./pictures/PickUp.png" alt="Pick Up Icon">
+                            <p>Pick Up</p>
+                            <p class="available-text">Available</p>
+                        </div>
+                        <div class="availability-option unavailable">
+                            <img src="./pictures/Same-Day Delivery.png" alt="Same-Day Delivery Icon">
+                            <p>Same-Day Delivery</p>
+                            <p class="unavailable-text">Unavailable</p>
+                        </div>
+                        <div class="availability-option unavailable">
+                            <img src="./pictures/Ship to home.png" alt="Ship to Home Icon">
+                            <p>Ship to Home</p>
+                            <p class="unavailable-text">Unavailable</p>
+                        </div>
+                    </div>
+
+                    <div class="location-info">
+                        Pick up at Toronto, ON Party City <a href="#">ⓘ</a><br>
+                        Get it today!<br>
+                        Pick up available 12:00 p.m., Feb 27<br>
+                        <a href="#">Check other stores</a>
+                    </div>
+
+                    <div class="quantity-selector">
+                        <button>-</button>
+                        <input type="text" value="1">
+                        <button>+</button>
+                    </div>
+
+                    <div class="add-to-cart-section">
+                        <button class="add-to-cart-button">Add to Cart</button>
+                        <button class="heart-button">♡</button>
+                    </div>
+
+                    <div class="find-in-store">
+                        Also Find It in Store: <br>
+                        5 In Stock at Toronto, ON Party City <a href="#">ⓘ</a><br>
+                        Aisle 7 <br>
+                        <a href="#">Check other stores</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Open Chatbot Button -->
+    <button class="open-chatbot-btn">Chat With Us</button>
+
+    <!-- Chatbot Popup Container -->
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h3>Party City Assistant</h3>
+            <button class="chatbot-close-btn">X</button>
+        </div>
+        <div class="chat-display">
+            <!-- Chat messages will be appended here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const openButton = document.querySelector('.open-chatbot-btn');
+        const chatbotContainer = document.querySelector('.chatbot-container');
+        const closeButton = document.querySelector('.chatbot-close-btn');
+        const chatDisplay = document.querySelector('.chat-display');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        // Function to open the chatbot
+        openButton.addEventListener('click', () => {
+            chatbotContainer.classList.add('active');
+            openButton.style.display = 'none'; // Hide the open button
+            addMessage('bot', "Thanks for choosing Party City! How can we help?"); // Add initial message
+        });
+
+        // Function to close the chatbot
+        closeButton.addEventListener('click', () => {
+            chatbotContainer.classList.remove('active');
+            openButton.style.display = 'block'; // Show the open button
+        });
+
+        // Function to send a message
+        sendButton.addEventListener('click', () => {
+            const messageText = messageInput.value;
+            if (messageText.trim() !== '') {
+                addMessage('user', messageText);
+                messageInput.value = '';
+
+                // Simulate a bot response (replace with actual chatbot logic)
+                setTimeout(() => {
+                    addMessage('bot', "Thanks for your message! We'll get back to you soon.");
+                }, 500);
+            }
+        });
+
+        // Function to add a message to the chat display
+        function addMessage(sender, message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.classList.add(`${sender}-message`);
+            messageElement.textContent = message;
+            chatDisplay.appendChild(messageElement);
+            chatDisplay.scrollTop = chatDisplay.scrollHeight;
+        }
+
+        // Optional: Send message on Enter key
+        messageInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                sendButton.click();
+            }
+        });
+
+        // Balloon Slider Logic
+        const balloonSlider = document.getElementById('balloon-slider');
+        const balloonPriceDisplay = document.getElementById('balloon-price');
+        const balloonCountDisplay = document.getElementById('balloon-count');
+        const productImage = document.getElementById('product-image'); // Get the image element
+        const colorSelect = document.getElementById('school-colors'); // Get the color select element
+
+        // Define your image URLs
+        const originalImageURL = "./pictures/gradballoon.jpg";
+
+        // Image URLS for red
+        const Upgrade1Red = "./pictures/Upgrade1Red.png";
+        const Upgrade2Red = "./pictures/Upgrade2Red.png";
+        const Upgrade3Red = "./pictures/Upgrade3Red.png";
+
+        //Image URLS for green
+        const Upgrade1Green = "./pictures/Upgrade1Green.png";
+        const Upgrade2Green = "./pictures/Upgrade2Green.png";
+        const Upgrade3Green = "./pictures/Upgrade3Green.png";
+
+        //Image URLS for Blue
+        const Upgrade1Blue = "./pictures/Upgrade1Blue.png";
+        const Upgrade2Blue = "./pictures/Upgrade2Blue.png";
+        const Upgrade3Blue = "./pictures/Upgrade3Blue.png";
+
+        //Image URLS for Purple
+        const Upgrade1Purple = "./pictures/Upgrade1Purple.png";
+        const Upgrade2Purple = "./pictures/Upgrade2Purple.png";
+        const Upgrade3Purple = "./pictures/Upgrade3Purple.png";
+
+        function updateImage() {
+            const selectedColor = colorSelect.value;
+            const numBalloons = parseInt(balloonSlider.value);
+            let imageToShow = originalImageURL; // Default base image
+
+            // Determine image based on COLOR and Slider Value
+            if (selectedColor === "red") {
+                if (numBalloons >= 3 && numBalloons <= 4) {
+                    imageToShow = Upgrade1Red;
+                } else if (numBalloons >= 5 && numBalloons <= 9) {
+                    imageToShow = Upgrade2Red;
+                } else if (numBalloons === 10) {
+                    imageToShow = Upgrade3Red;
+                } else {
+                    imageToShow = originalImageURL; // Default red image
+                }
+            } else if (selectedColor === "green") {
+                if (numBalloons >= 3 && numBalloons <= 4) {
+                    imageToShow = Upgrade1Green;
+                } else if (numBalloons >= 5 && numBalloons <= 9) {
+                    imageToShow = Upgrade2Green;
+                } else if (numBalloons === 10) {
+                    imageToShow = Upgrade3Green;
+                } else {
+                    imageToShow = originalImageURL; // Default green image
+                }
+            } else if (selectedColor === "blue") {
+                if (numBalloons >= 3 && numBalloons <= 4) {
+                    imageToShow = Upgrade1Blue;
+                } else if (numBalloons >= 5 && numBalloons <= 9) {
+                    imageToShow = Upgrade2Blue;
+                } else if (numBalloons === 10) {
+                    imageToShow = Upgrade3Blue;
+                } else {
+                    imageToShow = originalImageURL; // Default blue image
+                }
+            } else if (selectedColor === "purple") {
+                if (numBalloons >= 3 && numBalloons <= 4) {
+                    imageToShow = Upgrade1Purple;
+                } else if (numBalloons >= 5 && numBalloons <= 9) {
+                    imageToShow = Upgrade2Purple;
+                } else if (numBalloons === 10) {
+                    imageToShow = Upgrade3Purple;
+                } else {
+                    imageToShow = originalImageURL; // Default purple image
+                }
+            }
+            productImage.src = imageToShow;
+        }
+        balloonSlider.addEventListener('input', () => {
+            const numBalloons = parseInt(balloonSlider.value);
+            const basePrice = 13.99;
+            const totalPrice = basePrice * numBalloons;
+
+            balloonPriceDisplay.textContent = totalPrice.toFixed(2); // Format to 2 decimal places
+            balloonCountDisplay.textContent = numBalloons;
+
+            updateImage(); // Update image on slider input
+        });
+
+        // Event listener for color selection
+        colorSelect.addEventListener('change', () => {
+            updateImage(); // Update image on color change
+        });
+    </script>
+
+</body>
+
+</html>
