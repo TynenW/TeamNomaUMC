@@ -632,12 +632,12 @@
                 <!--
                 <div class="product-title">"Congrats" Cursive Letters Satin Foil Balloon - Rose Gold, 56x28 in</div>
                 -->
-                <div class="product-price">$13.99</div>
+                <div class="product-price">$11.93</div>
                 <!-- Slider Section Start -->
                 <div class="balloon-slider-container">
                     <input type="range" min="1" max="10" value="1" class="balloon-slider" id="balloon-slider">
                     <div class="balloon-price-display">
-                        Price: <span id="balloon-price">$13.99</span> | Balloons: <span id="balloon-count">1</span>
+                        Price: <span id="balloon-price">$11.93</span> | Balloons: <span id="balloon-count">1</span>
                     </div>
                 </div>
                 <!-- Slider Section End -->
@@ -859,7 +859,7 @@
         }
         balloonSlider.addEventListener('input', () => {
             const numBalloons = parseInt(balloonSlider.value);
-            const basePrice = 13.99;
+            const basePrice = 11.93;
             const totalPrice = basePrice * numBalloons;
 
             balloonPriceDisplay.textContent = totalPrice.toFixed(2); // Format to 2 decimal places
